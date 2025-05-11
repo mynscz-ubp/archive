@@ -1,20 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-content class="ion-padding home-page">
+    <h1 class="greeting">Halo, {{ outputtext }} <b> </b>!</h1>
+
+    <div class="status-cards">
+      <div class="status-card">
+        <div class="count">1</div>
+        <div class="label">Menunggu<br />Persetujuan</div>
+      </div>
+      <div class="status-card">
+        <div class="count">2</div>
+        <div class="label">Surat<br />Diajukan</div>
+      </div>
+      <div class="status-card">
+        <div class="count">1</div>
+        <div class="label">Surat<br />Ditolak</div>
+      </div>
+    </div>
+
+    <h1 class="section-title">Recent Activities</h1>
+    <ion-list class="activity-list">
+      <ion-item lines="none">
+        <ion-icon name="document-text" slot="start"></ion-icon>
+        <ion-label><h2>Surat Cuti Disetujui</h2></ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="create" slot="start"></ion-icon>
+        <ion-label><h2>Telah Mengajukan 1 Serat Cuti</h2></ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="close-circle" slot="start"></ion-icon>
+        <ion-label><h2>Surat Keluhan Ditolak</h2></ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-content>

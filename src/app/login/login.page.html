@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div class="logo-container">
+      <img src="assets/icon/logo.png" alt="Aventrex Logo" class="logo" />
+      <h1 class="brand-name">AVENTREX</h1>
+    </div>
+
+    <div class="login-form">
+      <ion-item class="input-item" lines="none">
+        <ion-input
+          [(ngModel)]="email"
+          type="text"
+          placeholder="Email"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item" lines="none">
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          [(ngModel)]="password"
+          placeholder="Password"
+        ></ion-input>
+        <ion-icon
+          slot="end"
+          [name]="showPassword ? 'eye-off' : 'eye'"
+          (click)="togglePasswordVisibility()"
+          class="eye-icon"
+        ></ion-icon>
+      </ion-item>
+
+      <ion-button (click)="doSubmit()" expand="block" class="login-button">
+        Log In
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
