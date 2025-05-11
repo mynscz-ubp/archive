@@ -1,0 +1,7 @@
+{
+  "name": "archive",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
