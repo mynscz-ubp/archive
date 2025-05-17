@@ -55,6 +55,10 @@ const routes: Routes = [
     path: 'upload',
     loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
   },
+  {
+    path: 'komentar',
+    loadChildren: () => import('./komentar/komentar.module').then( m => m.KomentarPageModule)
+  },
 ];
 
 @NgModule({

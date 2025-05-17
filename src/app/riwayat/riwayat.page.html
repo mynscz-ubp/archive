@@ -12,14 +12,16 @@
   </ion-header>
 
   <ion-content class="ion-padding">
-    <div class="submission-history-title">Detail Pengajuan</div>
+    <div class="submission-history-title">Riwayat Pengajuan</div>
 
     <ion-card *ngIf="detail">
       <ion-card-content>
-        <p><strong>Judul:</strong> {{ detail.judul }}</p>
-        <p><strong>Departemen:</strong> {{ detail.dept }}</p>
-        <p><strong>Ekstensi:</strong> {{ detail.ext }}</p>
         <p><strong>Status:</strong> {{ detail.status }}</p>
+        <p><strong>Tanggal:</strong> {{ detail.tanggal || '-' }}</p>
+        <p><strong>Nama Pengaju:</strong> {{ detail.nama || '-' }}</p>
+        <p><strong>NIP:</strong> {{ detail.nip || '-' }}</p>
+        <p><strong>Company:</strong> {{ detail.company || '-' }}</p>
+        <p><strong>Catatan:</strong> {{ detail.catatan || '-' }}</p>
       </ion-card-content>
     </ion-card>
 

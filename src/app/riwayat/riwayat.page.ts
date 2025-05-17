@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { SubmissionService } from '../services/submission.service';
 
 @Component({
   standalone: false,
@@ -7,15 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './riwayat.page.html',
   styleUrls: ['./riwayat.page.scss'],
 })
-export class RiwayatPage implements OnInit {
-  detail: any;
+export class RiwayatPage {
+  detail: any = null;
 
-  constructor(private router: Router) {}
+  constructor(private submissionService: SubmissionService) {}
 
-  ngOnInit() {
-    const nav = this.router.getCurrentNavigation();
-    if (nav?.extras?.state && nav.extras.state['detail']) {
-      this.detail = nav.extras.state['detail'];
-    }
+  ionViewWillEnter() {
+    this.detail = this.submissionService.getLastSubmission();
+    console.log('Data detail:', this.detail);
   }
 }

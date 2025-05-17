@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   standalone: false,
@@ -13,7 +14,7 @@ export class LoginPage implements OnInit {
   showPassword: boolean = false;
   showAlert: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
     const dummyUsers = [
@@ -70,6 +71,8 @@ export class LoginPage implements OnInit {
       localStorage.setItem('nama', nama);
       localStorage.setItem('nip', nip);
       localStorage.setItem('jabatan', jabatan);
+
+      this.authService.setUser({ nama, nip });
 
       this.router.navigateByUrl('/home');
     } else {

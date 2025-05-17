@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card class="comment-card">
+    <ion-item lines="none" class="comment-header">
+      <ion-avatar slot="start">
+        <img src="assets/img/user.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2><strong>Jimmy Ahyari</strong> via Google+</h2>
+        <p class="comment-meta">1 week ago</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content class="comment-text">
+      Yuk.. Jadi Konsumen yang cerdas; Yang paham akan hak dan kewajibannya
+      sebagai Konsumen :)
+    </ion-card-content>
+
+    <div class="comment-actions">
+      <div>
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+        <span>+1</span>
+      </div>
+      <ion-button fill="clear" size="small">Reply</ion-button>
+    </div>
+  </ion-card>
+
+  <div class="comment-box">
+    <ion-textarea placeholder="Add a comment"></ion-textarea>
+    <ion-button expand="block" color="primary" class="comment-button">
+      Comment
+    </ion-button>
+  </div>
+</ion-content>

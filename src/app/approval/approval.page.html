@@ -27,7 +27,7 @@
       <ion-card-content>
         <ion-list>
           <ion-item
-            *ngFor="let s of submissions"
+            *ngFor="let s of filteredSubmissions"
             button
             (click)="goToRiwayatDetail(s)"
           >
@@ -36,7 +36,7 @@
               <h2>{{ s.judul }}</h2>
               <p>{{ s.dept }} ({{ s.ext }})</p>
             </ion-label>
-            <ion-text [color]="getColor(s.status)"> {{ s.status }} </ion-text>
+            <ion-text [color]="getColor(s.status)">{{ s.status }}</ion-text>
           </ion-item>
         </ion-list>
       </ion-card-content>

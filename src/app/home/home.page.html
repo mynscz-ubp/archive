@@ -15,16 +15,36 @@
     <h1 class="greeting">Halo, {{ outputtext }} <b> </b>!</h1>
 
     <div class="status-cards">
-      <div class="status-card">
-        <div class="count">1</div>
+      <!-- Menunggu Persetujuan -->
+      <div
+        class="status-card"
+        [routerLink]="['/approval']"
+        [queryParams]="{ filter: 'Menunggu' }"
+        style="cursor: pointer"
+      >
+        <div class="count">{{ getCountByStatus('Menunggu') }}</div>
         <div class="label">Menunggu<br />Persetujuan</div>
       </div>
-      <div class="status-card">
-        <div class="count">2</div>
+
+      <!-- Surat Diajukan -->
+      <div
+        class="status-card"
+        [routerLink]="['/approval']"
+        [queryParams]="{ filter: 'Diajukan' }"
+        style="cursor: pointer"
+      >
+        <div class="count">{{ getCountByStatus('Diajukan') }}</div>
         <div class="label">Surat<br />Diajukan</div>
       </div>
-      <div class="status-card">
-        <div class="count">1</div>
+
+      <!-- Surat Ditolak -->
+      <div
+        class="status-card"
+        [routerLink]="['/approval']"
+        [queryParams]="{ filter: 'Ditolak' }"
+        style="cursor: pointer"
+      >
+        <div class="count">{{ getCountByStatus('Ditolak') }}</div>
         <div class="label">Surat<br />Ditolak</div>
       </div>
     </div>
