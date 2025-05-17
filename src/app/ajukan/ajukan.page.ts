@@ -13,6 +13,7 @@ export class AjukanPage implements OnInit {
   nama: string = '';
   nip: string = '';
   suratType: string = '';
+  tanggal: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -42,6 +43,11 @@ export class AjukanPage implements OnInit {
   submitForm() {
     const user = this.authService.getUser();
 
+    // Ambil tanggal dari inputan pengguna
+    const inputTanggal = (
+      document.querySelector('ion-input[type="date"]') as HTMLInputElement
+    )?.value;
+
     this.submissionService.addSubmission({
       judul: this.suratType,
       dept: ['Keluhan'].includes(this.suratType) ? 'GA' : 'HRD',
@@ -49,7 +55,7 @@ export class AjukanPage implements OnInit {
         ? 'PDF'
         : 'DOCX',
       status: 'Menunggu',
-      tanggal: new Date().toLocaleDateString(),
+      tanggal: inputTanggal || new Date().toLocaleDateString(), // Ambil dari input atau gunakan tanggal saat ini
       nama: user?.nama || 'Tidak diketahui',
       nip: user?.nip || '-',
       company: 'Aventrex',
