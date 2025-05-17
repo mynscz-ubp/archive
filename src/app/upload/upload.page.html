@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+  <ion-content fullscreen class="form-wrapper">
+    <div class="form-container">
+      <div class="form-box">
+        <ion-label class="form-title">Choose File</ion-label>
+
+        <ion-item lines="none" class="file-icon-box">
+          <ion-icon name="document-outline" size="large"></ion-icon>
+          <ion-icon name="document-attach-outline" size="large"></ion-icon>
+          <ion-icon name="folder-open-outline" size="large"></ion-icon>
+        </ion-item>
+
+        <div class="drag-drop-box">
+          <p>You can drag and drop<br />files here to add them</p>
+        </div>
+
+        <ion-button
+          expand="block"
+          class="submit-button"
+          [routerLink]="['/success']"
+        >
+          Submit
+        </ion-button>
+      </div>
+    </div>
+  </ion-content>
+</ion-content>

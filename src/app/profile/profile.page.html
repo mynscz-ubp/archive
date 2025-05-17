@@ -1,13 +1,44 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
     </ion-toolbar>
   </ion-header>
+
+  <ion-content class="ion-padding profile-page">
+    <div class="profile-header">
+      <h2>Profile</h2>
+      <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nama Karyawan</ion-label>
+          <ion-input [value]="nama" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">NIP</ion-label>
+          <ion-input [value]="nip" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Jabatan</ion-label>
+          <ion-input [value]="jabatan" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input [value]="email" readonly></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>

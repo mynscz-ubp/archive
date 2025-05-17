@@ -19,15 +19,41 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfilePageModule),
   },
   {
     path: 'template',
-    loadChildren: () => import('./template/template.module').then( m => m.TemplatePageModule)
+    loadChildren: () =>
+      import('./template/template.module').then((m) => m.TemplatePageModule),
   },
   {
     path: 'approval',
-    loadChildren: () => import('./approval/approval.module').then( m => m.ApprovalPageModule)
+    loadChildren: () =>
+      import('./approval/approval.module').then((m) => m.ApprovalPageModule),
+  },
+  {
+    path: 'riwayat',
+    loadChildren: () =>
+      import('./riwayat/riwayat.module').then((m) => m.RiwayatPageModule),
+  },
+  {
+    path: 'pengajuan',
+    loadChildren: () =>
+      import('./pengajuan/pengajuan.module').then((m) => m.PengajuanPageModule),
+  },
+  {
+    path: 'ajukan/:type',
+    loadChildren: () =>
+      import('./ajukan/ajukan.module').then((m) => m.AjukanPageModule),
+  },
+  {
+    path: 'success',
+    loadChildren: () => import('./success/success.module').then( m => m.SuccessPageModule)
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
   },
 ];
 

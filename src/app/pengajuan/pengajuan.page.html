@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <h2 class="title">Pengajuan Document</h2>
+
+    <ion-searchbar placeholder="search..."></ion-searchbar>
+
+    <div class="upload-container">
+      <ion-button fill="clear" class="upload-button" [routerLink]="['/upload']">
+        Upload File
+        <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+    <ion-card>
+      <ion-card-header color="dark">
+        <ion-card-title>Template Document</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Surat Cuti</h3>
+              <p>HRD (DOCX)</p>
+            </ion-label>
+            <ion-button
+              fill="clear"
+              size="small"
+              [routerLink]="['/ajukan', 'surat-cuti']"
+              >Ajukan</ion-button
+            >
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Surat Rekomendasi</h3>
+              <p>HRD (PDF)</p>
+            </ion-label>
+            <ion-button
+              fill="clear"
+              size="small"
+              [routerLink]="['/ajukan', 'surat-rekomendasi']"
+              >Ajukan</ion-button
+            >
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Surat Ket-Kerja</h3>
+              <p>HRD (PDF)</p>
+            </ion-label>
+            <ion-button
+              fill="clear"
+              size="small"
+              [routerLink]="['/ajukan', 'surat-ket-kerja']"
+              >Ajukan</ion-button
+            >
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Surat Keluhan</h3>
+              <p>GA (DOCX)</p>
+            </ion-label>
+            <ion-button
+              fill="clear"
+              size="small"
+              [routerLink]="['/ajukan', 'surat-keluhan']"
+              >Ajukan</ion-button
+            >
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

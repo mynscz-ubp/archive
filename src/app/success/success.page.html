@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true" class="success-page">
+  <ion-button fill="clear" class="back-button" (click)="goBack()">
+    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  <div class="content-container">
+    <img
+      src="assets/icon/success.png"
+      alt="Success Icon"
+      class="success-icon"
+    />
+    <h2>Pengajuan {{ suratType }} Berhasil!</h2>
+  </div>
+</ion-content>

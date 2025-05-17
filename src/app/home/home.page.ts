@@ -12,7 +12,7 @@ export class HomePage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.outputtext = localStorage.getItem('email');
+    this.outputtext = localStorage.getItem('nama');
     console.log('Ini Hasil dari Data LocalStorage ==>' + this.outputtext);
   }
 }

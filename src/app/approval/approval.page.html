@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>approval</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">approval</ion-title>
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
     </ion-toolbar>
   </ion-header>
+
+  <ion-content class="ion-padding approvals-page">
+    <div class="center-section">
+      <div class="title">Approvals Document</div>
+      <div class="pending-box">
+        <div class="pending-number">{{ getPendingCount() }}</div>
+        <div class="pending-text">Menunggu<br />Persetujuan</div>
+      </div>
+    </div>
+
+    <ion-card>
+      <ion-card-header class="history-header">
+        <ion-card-title>Riwayat Pengajuan</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item
+            *ngFor="let s of submissions"
+            button
+            (click)="goToRiwayatDetail(s)"
+          >
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>{{ s.judul }}</h2>
+              <p>{{ s.dept }} ({{ s.ext }})</p>
+            </ion-label>
+            <ion-text [color]="getColor(s.status)"> {{ s.status }} </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>

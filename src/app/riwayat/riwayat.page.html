@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <div class="submission-history-title">Detail Pengajuan</div>
+
+    <ion-card *ngIf="detail">
+      <ion-card-content>
+        <p><strong>Judul:</strong> {{ detail.judul }}</p>
+        <p><strong>Departemen:</strong> {{ detail.dept }}</p>
+        <p><strong>Ekstensi:</strong> {{ detail.ext }}</p>
+        <p><strong>Status:</strong> {{ detail.status }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="!detail">
+      <ion-card-content>
+        <p>Data tidak ditemukan.</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

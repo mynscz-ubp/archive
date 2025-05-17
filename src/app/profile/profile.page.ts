@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  constructor() {}
+  nama: string = '';
+  nip: string = '';
+  jabatan: string = '';
+  email: string = '';
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.nama = localStorage.getItem('nama') || '';
+    this.nip = localStorage.getItem('nip') || '';
+    this.jabatan = localStorage.getItem('jabatan') || '';
+    this.email = localStorage.getItem('email') || '';
+  }
 }
