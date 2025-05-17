@@ -91,3 +91,51 @@ ion-item {
   margin-bottom: 10px;
   margin-right: 10px;
 }
+
+.custom-alert .alert-wrapper {
+  background: #ff4d4d;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: shake 0.3s ease;
+}
+
+.custom-alert .alert-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.custom-alert .alert-subheader {
+  font-size: 16px;
+  color: #fdd835;
+}
+
+.custom-alert .alert-message {
+  font-size: 14px;
+  color: #f1f1f1;
+}
+
+.custom-alert .alert-button {
+  background: #fdd835;
+  color: #333;
+  font-weight: bold;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

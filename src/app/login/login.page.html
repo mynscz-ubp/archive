@@ -33,12 +33,13 @@
       </ion-button>
 
       <ion-alert
-        header="Login Gagal"
-        subHeader="Email atau Password salah"
-        message="Silakan periksa kembali informasi login Anda."
+        header="Login Gagal!"
+        subHeader="Oops, ada yang salah"
+        message="Email atau Password tidak cocok. Silakan coba lagi."
         [isOpen]="showAlert"
         (didDismiss)="showAlert = false"
         buttons="OK"
+        cssClass="custom-alert"
       ></ion-alert>
     </div>
   </div>
