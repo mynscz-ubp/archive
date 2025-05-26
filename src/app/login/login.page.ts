@@ -25,6 +25,7 @@ export class LoginPage implements OnInit {
   password: string = '';
   showPassword: boolean = false;
   showAlert: boolean = false;
+  isSplashVisible = true;
 
   dummyUsers: User[] = [
     {
@@ -72,6 +73,9 @@ export class LoginPage implements OnInit {
     if (!localStorage.getItem('users')) {
       localStorage.setItem('users', serializedUsers);
     }
+    setTimeout(() => {
+      this.isSplashVisible = false;
+    }, 2500);
   }
 
   togglePasswordVisibility() {
