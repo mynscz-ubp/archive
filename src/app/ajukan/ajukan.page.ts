@@ -14,6 +14,9 @@ export class AjukanPage implements OnInit {
   nip: string = '';
   suratType: string = '';
   tanggal: string = '';
+  tipeCuti: string = '';
+  sisaCuti: number = 0;
+  alasan: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +34,16 @@ export class AjukanPage implements OnInit {
     const user = this.authService.getUser();
     this.nama = user?.nama || '';
     this.nip = user?.nip || '';
+  }
+  onTipeCutiChange() {
+    const user = this.authService.getUser();
+    if (this.tipeCuti === 'tahunan') {
+      this.sisaCuti = user?.sisaCuti?.tahunan || 0;
+    } else if (this.tipeCuti === 'istimewa') {
+      this.sisaCuti = user?.sisaCuti?.istimewa || 0;
+    } else {
+      this.sisaCuti = 0;
+    }
   }
 
   formatJudul(text: string): string {

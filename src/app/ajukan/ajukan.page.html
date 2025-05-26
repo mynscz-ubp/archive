@@ -11,9 +11,17 @@
         <ion-input [(ngModel)]="nama" readonly></ion-input>
       </ion-item>
 
+      <!-- Pilih Tipe Cuti -->
       <ion-item lines="none">
         <ion-label position="stacked">Tipe Cuti</ion-label>
-        <ion-input placeholder="Value"></ion-input>
+        <ion-select
+          [(ngModel)]="tipeCuti"
+          (ionChange)="onTipeCutiChange()"
+          interface="popover"
+        >
+          <ion-select-option value="tahunan">Cuti Tahunan</ion-select-option>
+          <ion-select-option value="istimewa">Cuti Istimewa</ion-select-option>
+        </ion-select>
       </ion-item>
 
       <ion-item lines="none">
@@ -26,9 +34,13 @@
         <ion-input placeholder="Value"></ion-input>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-label position="stacked">Sisa Cuti</ion-label>
-        <ion-input placeholder="2"></ion-input>
+      <!-- Tampilkan Sisa Cuti -->
+      <ion-item lines="none" *ngIf="tipeCuti">
+        <ion-label position="stacked"
+          >Sisa Cuti {{ tipeCuti === 'tahunan' ? 'Tahunan' : 'Istimewa'
+          }}</ion-label
+        >
+        <ion-input [value]="sisaCuti" readonly></ion-input>
       </ion-item>
 
       <ion-button expand="block" class="submit-button" (click)="submitForm()">

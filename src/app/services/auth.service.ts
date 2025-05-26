@@ -14,12 +14,26 @@ export class AuthService {
   getUser() {
     if (this.user) return this.user;
 
-    // fallback dari localStorage (kalau page reload dan this.user hilang)
     const nama = localStorage.getItem('nama');
     const nip = localStorage.getItem('nip');
+    const sisaCutiTahunan = parseInt(
+      localStorage.getItem('sisaCutiTahunan') || '0',
+      10
+    );
+    const sisaCutiIstimewa = parseInt(
+      localStorage.getItem('sisaCutiIstimewa') || '0',
+      10
+    );
 
     if (nama && nip) {
-      this.user = { nama, nip };
+      this.user = {
+        nama,
+        nip,
+        sisaCuti: {
+          tahunan: sisaCutiTahunan,
+          istimewa: sisaCutiIstimewa,
+        },
+      };
       return this.user;
     }
 
