@@ -63,3 +63,17 @@ ion-icon {
   font-weight: 500;
   text-transform: none;
 }
+
+.drag-drop-box {
+  background: #ddd;
+  padding: 24px;
+  text-align: center;
+  border-radius: 16px;
+  color: #555;
+  border: 2px dashed #ccc;
+  transition: background 0.3s;
+}
+
+.drag-drop-box:hover {
+  background: #ccc;
+}
